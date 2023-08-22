@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float power = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +16,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Debug.Log("left");
+            Debug.Log(gameObject.transform.position.x);
+            gameObject.transform.position += Vector3.left * power;
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Debug.Log("right");
+            Debug.Log(gameObject.transform.position.x);
+            gameObject.transform.position += Vector3.right * power;
         }
 
     }
+
+
 }
