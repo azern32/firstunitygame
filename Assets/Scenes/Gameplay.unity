@@ -381,6 +381,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 1
+  theCamera: {fileID: 519420031}
+  zoom: 3.03
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

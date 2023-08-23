@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float power = 1;
+
+    public Camera theCamera;
+    public float zoom = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
             gameObject.transform.position += Vector3.right * power;
         }
 
+        theCamera.orthographicSize = zoom;
     }
 
 
