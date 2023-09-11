@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float forceConstant = 1;
     public GameObject graivtyPoint;
 
+    public float test = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
         Force2Objects(gameObject, graivtyPoint, true);
 
+        test += Time.deltaTime;
     }
 
     void Force2Objects(GameObject player, GameObject gravityPoint, Boolean attract)
