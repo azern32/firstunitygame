@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
         Force2Objects(gameObject, graivtyPoint, true);
 
-        test += Time.deltaTime;
     }
 
     void Force2Objects(GameObject player, GameObject gravityPoint, Boolean attract)
@@ -43,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         int pullForce = attract ? 1 : -1;
         float distance = player.transform.position.x - gravityPoint.transform.position.x;
 
+        test += Time.deltaTime;
         if (distance != 0)
         {
 
