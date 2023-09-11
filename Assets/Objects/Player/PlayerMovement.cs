@@ -1,14 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float power = 1;
+    public float forceConstant = 1;
+    public GameObject graivtyPoint;
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+        Debug.Log("posisi gravitypoint" + graivtyPoint.transform.position);
     }
 
     // Update is called once per frame
@@ -26,18 +32,19 @@ public class PlayerMovement : MonoBehaviour
             gameObject.transform.position += Vector3.right * power;
         }
 
-        if (Input.touchCount > 0)
-        {
-            // First touch
-            Touch touch = Input.GetTouch(0);
+        Force2Objects(gameObject, graivtyPoint, true);
 
-            gameObject.transform.position = new Vector3(
-                touch.position.x,
-                touch.position.y,
-                gameObject.transform.position.z
-            );
-        }
     }
 
+    void Force2Objects(GameObject player, GameObject gravityPoint, Boolean attract)
+    {
+        int pullForce = attract ? 1 : -1;
+        float distance = player.transform.position.x - gravityPoint.transform.position.x;
+
+        if (distance != 0)
+        {
+
+        }
+    }
 
 }
